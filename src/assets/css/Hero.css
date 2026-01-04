@@ -1,0 +1,137 @@
+/* HERO SECTION */
+.hero {
+  min-height: 100vh;
+  padding: 3.5rem 2rem 4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  background-color: var(--bg-main);
+  position: relative;
+}
+
+/* AVATAR */
+.hero-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* subtle halo behind avatar */
+.hero-avatar::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: rgba(47, 125, 50, 0.08);
+  z-index: -1;
+}
+
+/* INTRO TEXT */
+.hero-intro {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.hero-intro span {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* MAIN HEADING */
+.hero-title {
+  font-size: clamp(2.6rem, 5.5vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  color: var(--text-main);
+  margin-bottom: 1.3rem;
+}
+
+/* SUBTITLE */
+.hero-subtitle {
+  max-width: 520px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 2.4rem;
+}
+
+/* ACTION BUTTONS */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+/* PRIMARY BUTTON */
+.btn-primary {
+  padding: 0.7rem 1.7rem;
+  border-radius: 999px;
+  background-color: var(--text-main);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* SECONDARY BUTTON */
+.btn-secondary {
+  padding: 0.7rem 1.7rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+  transition: color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  color: var(--accent);
+}
+
+/* SUBTLE DIVIDER (adds structure without noise) */
+.hero::after {
+  content: "";
+  margin-top: 4rem;
+  width: 60px;
+  height: 2px;
+  background-color: var(--accent);
+  opacity: 0.35;
+}
+
+.hero {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-1.2rem);
+  }
+}
+
+
+@media (max-width: 768px) {
+   .hero {
+    min-height: calc(100svh - 60px);
+    top: -3.2rem;
+  }
+}
+
